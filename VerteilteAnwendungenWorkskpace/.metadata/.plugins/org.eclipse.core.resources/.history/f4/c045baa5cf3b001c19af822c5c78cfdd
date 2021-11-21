@@ -1,0 +1,11 @@
+package datenbankanbindung;
+
+public class Sitzplatz{
+	public Sitzplatz(int nr, Zustand status, String nameReservator, boolean reservierungenAnnehmen) {
+		
+	}
+	
+public Sitzplatz(int nr, Zustand status, boolean reservierungenAnnehmen) {
+		
+	}
+}

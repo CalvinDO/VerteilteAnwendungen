@@ -1,0 +1,21 @@
+package services;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class TimeServices {
+
+	public static void main(String[] args) {
+		ServerSocket serverSocket;
+		Socket socket;
+		
+		try {
+			 serverSocket = new ServerSocket(75);
+			 socket = serverSocket.accept();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

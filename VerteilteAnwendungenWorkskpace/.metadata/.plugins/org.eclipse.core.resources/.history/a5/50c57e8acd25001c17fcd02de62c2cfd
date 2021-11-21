@@ -1,0 +1,18 @@
+package dispatcher;
+
+public class Dispatcher {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static int[] execute(F f, int n) {
+		
+		for (int threadIndex = 0; threadIndex < n; theadIndex++) {
+			Thread newThread = new Thread();
+			newThread.start();			
+		}
+
+	}
+}

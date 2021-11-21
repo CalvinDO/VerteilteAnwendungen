@@ -1,0 +1,24 @@
+package datenbankanbindung;
+
+import java.lang.reflect.Array;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import org.mariadb.jdbc.MariaDbDataSource;
+
+public class KartenverkaufTester {
+
+	public static void main(String[] args) {
+		Kartenverkauf verkauf  = new Kartenverkauf();
+		//verkauf.getSitzplatz(15).print();
+
+		Sitzplatz[] sitzplätze = verkauf.getSitzplätze();
+		for (Sitzplatz sitzplatz : sitzplätze) {
+			sitzplatz.print();
+		}
+	}
+}

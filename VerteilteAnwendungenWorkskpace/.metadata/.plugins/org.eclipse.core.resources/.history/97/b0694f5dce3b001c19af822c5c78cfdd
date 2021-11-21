@@ -1,0 +1,44 @@
+package datenbankanbindung;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import org.mariadb.jdbc.MariaDbDataSource;
+
+public class KartenverkaufTester {
+
+	public static void main(String[] args) {
+		MariaDbDataSource mdatasource = new MariaDbDataSource();
+
+		try {
+			mdatasource.setUrl("jdbc:mysql://webapp.dm.fh-furtwangen.de/op");
+
+			mdatasource.setUser("op");
+
+			mdatasource.setPassword("geheim");
+
+			DataSource datasource = (DataSource) mdatasource;
+		} catch (SQLException e) {
+			System.out.println("Failed at setting url, user and password");
+			e.printStackTrace();
+		}
+
+		
+		try (Connection connection = datasource.getConnection();) {
+			Statement statement = connection.createStatement();
+
+			ResultSet resultset = statement.executeQuery("select * from studenten");
+			while (resultset.next()) {
+				System.out.println(resultset.getString("vorname"));
+
+				System.out.println(resultset.getString("nachname"));
+				System.out.println(resultset.getInt("matrikelnummer"));
+			}
+		}
+	}
+
+}

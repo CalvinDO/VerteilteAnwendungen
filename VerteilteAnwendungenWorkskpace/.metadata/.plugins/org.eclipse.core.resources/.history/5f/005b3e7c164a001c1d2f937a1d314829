@@ -1,0 +1,19 @@
+package datenbankanbindung;
+
+public class KartenverkaufTester {
+
+	public static void main(String[] args) {
+		Kartenverkauf verkauf  = new Kartenverkauf();
+		
+
+		Sitzplatz[] sitzplätze = verkauf.getSitzplätze();
+		for (Sitzplatz sitzplatz : sitzplätze) {
+			sitzplatz.print();
+			
+			System.out.println(sitzplatz.nr);
+		}
+		
+		System.out.println(verkauf.getReservierungenAnnehmen());
+		
+	}
+}
