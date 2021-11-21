@@ -6,13 +6,13 @@ public class KartenverkaufTester {
 		Kartenverkauf verkauf  = new Kartenverkauf();
 		
 		/*
-		Sitzplatz[] sitzplätze = verkauf.getSitzplätze();
-		for (Sitzplatz sitzplatz : sitzplätze) {
+		Sitzplatz[] sitzplï¿½tze = verkauf.getSitzplï¿½tze();
+		for (Sitzplatz sitzplatz : sitzplï¿½tze) {
 			sitzplatz.print();
 			
 		}
 		*/
-		System.out.println(verkauf.getReservierungenAnnehmen());
+		System.out.println(verkauf.toString());
 		
 	}
 }

@@ -60,7 +60,7 @@ public class Kartenverkauf {
 		return null;
 	}
 
-	public Sitzplatz[] getSitzpl�tze() {
+	public Sitzplatz[] getSitzplätze() {
 		Sitzplatz[] output = null;
 
 		try (Connection connection = this.datasource.getConnection();) {
@@ -110,12 +110,9 @@ public class Kartenverkauf {
 
 			ResultSet resultset = statement.executeQuery("SELECT * FROM `reservierungen-annehmen-status`");
 			
-			System.out.println(resultset.getArray(0));
 			
 			while (resultset.next()) {
-				System.out.println("haaaaallllooo "   + output);
 				output = resultset.getBoolean("reservierungen-annehmen");
-				System.out.println("haaaaallllooo "   + output);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -124,15 +121,26 @@ public class Kartenverkauf {
 		return output;
 	}
 
-	/*
-	 * public String toString() {
-	 * 
-	 * }
-	 * 
-	 * public void kaufe(int nr) {
-	 * 
-	 * }
-	 * 
+	
+	  public String toString() {
+		  String output = "";
+		  
+		  output += "Reservierungen werden momentan " + (this.getReservierungenAnnehmen() ? "angenommen" : "nicht angenommen") ;
+		  output += "\n Sitzplätze: \n";
+		  
+		  for (Sitzplatz sitzplatz : this.getSitzplätze()) {
+			  output += sitzplatz.toString();
+		  }
+		  
+		  return output;
+	  }
+	 
+	  
+	
+	   public void kaufe(int nr) {
+	
+	  }
+	 /* 
 	 * public void reserviere(int nr, String name) {
 	 * 
 	 * }
